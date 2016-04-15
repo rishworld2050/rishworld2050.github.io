@@ -1,4 +1,81 @@
-﻿body
-{
-    background:#ebebeb;
+﻿body {
+    background: rgb(232, 232, 232);
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI Light";
 }
+
+#banner {
+    background-color: rgba(3, 32, 128, 0.92);
+    height: 700px;
+    background-size: 100% 900px;
+}
+
+#float_menu_icon {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    display: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAjCAMAAAA60AOfAAAARVBMVEUADSsAEysHIjMmNkb8//8lNUINIjd7goeLkpisrrEdLz4EHjdob3ezur7O1dnX2Nrs8PH3+PgZLDspOEX///+XnKA/SlWButROAAAAjUlEQVR4XtWURw7DMAwEzaLqXpL/PzXIJWAOXsk6JPCcBwLFJdkd9dzUXWbEYt2JvOcz+p5m44ZtR+Rg3VzvRnYIjsZdhydiWNv7q6p/zm18IEbrJtoQXfq4+s5C9jNEcvhypZCb1tZA6cLfftJfnK9eerdxJqN3TqQw63aHBGTR6E7ECLPzWrwl97yTL2mDaPicLxCaAAAAAElFTkSuQmCC') no-repeat;
+}
+.page_sec{
+    margin-left:400px;
+    height:400px;
+    padding: 100px 0;
+}
+#sliding_menu {
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.menu_item {
+    height: 30px;
+    color: #fff;
+    border-bottom: 1px solid rgba(64, 60, 60, 0.82);
+    padding: 15px 10px 10px;
+    width: 280px;
+    text-align: center;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+
+    .menu_item:first-child {
+        background: #34495e;
+        font-weight: bold;
+    }
+
+        .menu_item:first-child::before {
+            content: "Rishab Kumar Agarwal";
+        }
+
+    .menu_item:nth-child(2)::before {
+        content: "About Me";
+    }
+
+    .menu_item:nth-child(3)::before {
+        content: "Skills";
+    }
+
+    .menu_item:nth-child(4)::before {
+        content: "Experiences";
+    }
+
+    .menu_item:nth-child(5)::before {
+        content: "Education";
+    }
+
+    .menu_item:last-child::before {
+        content: "Contact Me";
+    }
+
+.pic{
+    width:350px;
+    height:250px;
+    background-color:#fff;
+    }
