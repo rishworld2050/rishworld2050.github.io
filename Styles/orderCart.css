@@ -122,13 +122,13 @@ display: inline-block;
 	color:blue;
 	cursor:pointer;
 }
-.orderConfSumm .itemHeadSumm,.orderconfSumm .itemNameSumm{
+.orderConfSumm .itemHeadSumm,.orderConfSumm .itemNameSumm{
 	width:400px;
 }
-.orderConfSumm .countHeadsumm,.orderconfSumm .count{
+.orderConfSumm .countHeadsumm,.orderConfSumm .count{
 	width:135px;
 }
-.orderConfSumm .itemHeadSumm,.orderconfSumm .itemNameSumm{
+.orderConfSumm .itemHeadSumm,.orderConfSumm .itemNameSumm{
 	width:400px;
 }
 .itemIncSumm,.itemDecSummm{
@@ -180,4 +180,7 @@ display: table-cell;
     padding: 5px 0;
     text-align: center;
     margin: 0 auto;
+}
+.orderConfSumm .orderBtn{
+	margin-top:30px;
 }
