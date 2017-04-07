@@ -1,0 +1,28 @@
+<div id="orderBuilderMain" class="orderBuilderContainer">
+						<div class="orderBuilderSumm">
+				<div class="heading">Order</div>
+				<div class="summaryMenu">
+					<div class="foodTable">
+						<div class="tblHead">
+							<div class="itemHeadSumm">Item name</div>
+							<div class="countHeadSumm">Count</div>
+							<div class="priceHeadSumm">Amount</div>
+						</div>
+						<div class="summTblRow" ng-repeat="(orderKey,orderVal) in order">
+							<div class="itemNameSumm">{{orderVal.Item}}</div>
+							<div class="count">
+							<div class="itemCountSumm">{{orderVal.selStock}}</div>
+							<div class="itemIncSumm itemEnabled add_{{orderKey}}" ng-click="addItem(orderKey)">+</div>
+							<div class="itemDecSumm itemEnabled remove_{{orderKey}}" ng-click="removeItem(orderKey)">-</div>
+							</div>
+							<div class="itemPriceSumm">{{orderVal.Price * orderVal.selStock}}</div>
+						</div>
+						<div class="summTblRow totalRow" ng-show="totalItem!=0">
+							<div class="itemNameSumm">Total</div>
+							<div class="count">{{totalItem}}</div>
+							<div class="itemPriceSumm">{{totalAmount}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
