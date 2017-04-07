@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Rishab A - Front end engineer</title>
+	<link href="../Styles/orderCart.css" type="text/css" rel="stylesheet"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+	<script src="../Scripts/orderCart.js" type="text/javascript"></script>
+</head>
+<body ng-app="orderCart">
+	
+		<header>
+			<div id="logo">foodzonline</div>
+			<nav>
+				<div class="navOpt">Home</div>
+				<div class="navOpt">Order</div>
+			</nav>
+		</header>
+		<div class="container" ng-controller="orderBuilder">
+		
+		<ng-view></ng-view>
+	</div>
+</body>

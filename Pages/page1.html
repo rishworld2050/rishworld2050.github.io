@@ -1,0 +1,48 @@
+<div id="orderBuilderMain" class="orderBuilderContainer">
+			<div class="orderBuilderMain">
+				<div class="heading">Menu</div>
+				<div class="menu" ng-repeat="value in foodType">
+					<div class="foodType">{{value}}</div>
+					<div class="foodTable">
+						<div class="tblHead">
+							<div class="itemHead">Item name</div>
+							<div class="priceHead">Price</div>
+						</div>
+						<div class="tblRow" ng-repeat="foodVal in menuInfo[value.split(' ').join('')] track by $index">
+							<div class="itemSno">{{$index + 1}}</div>
+							<div class="itemName">{{foodVal.Item}}</div>
+							<div class="itemPrice">{{foodVal.Price}}</div>
+							<div class="itemInc itemEnabled add_{{value.split(' ').join('')}}_{{$index}}" ng-click="addItem(value.split(' ').join(''),$index)">+</div>
+							<div class="itemDec remove_{{value.split(' ').join('')}}_{{$index}}" ng-click="removeItem(value.split(' ').join(''),$index)">-</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="orderBuilderSumm">
+				<div class="heading">Order</div>
+				<div class="summaryMenu">
+					<div class="foodTable">
+						<div class="tblHead">
+							<div class="itemHeadSumm">Item name</div>
+							<div class="countHeadSumm">Count</div>
+							<div class="priceHeadSumm">Amount</div>
+						</div>
+						<div class="summTblRow" ng-repeat="(orderKey,orderVal) in order">
+							<div class="itemNameSumm">{{orderVal.Item}}</div>
+							<div class="count">
+							<div class="itemCountSumm">{{orderVal.selStock}}</div>
+							<div class="itemIncSumm itemEnabled add_{{orderKey}}" ng-click="addItem(orderKey)">+</div>
+							<div class="itemDecSumm itemEnabled remove_{{orderKey}}" ng-click="removeItem(orderKey)">-</div>
+							</div>
+							<div class="itemPriceSumm">{{orderVal.Price * orderVal.selStock}}</div>
+						</div>
+						<div class="summTblRow totalRow" ng-show="totalItem!=0">
+							<div class="itemNameSumm">Total</div>
+							<div class="count">{{totalItem}}</div>
+							<div class="itemPriceSumm">{{totalAmount}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
