@@ -34,7 +34,7 @@ nav{
 .orderBuilderContainer{
 	display: table-row;
 }
-.orderBuilderMain,.orderBuilderSumm,{
+.orderBuilderMain,.orderBuilderSumm{
 	    display: table-cell;
     border-left: 4px solid #b7b7b7;
     background-color: #f7f7f7;
