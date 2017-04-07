@@ -6,6 +6,9 @@ orderApp.config(function($routeProvider) {
     })
     .when("/orderCnf",{
            templateUrl: "orderConfirmation.html"
+    })  
+    .when("/finish",{
+           templateUrl: "finish.html"
     })    
     .otherwise({
         templateUrl : "nothing here"
