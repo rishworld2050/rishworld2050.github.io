@@ -1,4 +1,52 @@
+<div class="userInfo">
+<div class="heading">Customer Info</div>
+<div class="summaryMenu">
+	<form name="custInfo">
+		<div class="formCtrl">
+			<label for="fName">First Name</label>
+			<input name="fName" type="text" ng-model="fName" ng-pattern="[A-z,]+" ng-required>
+			<label class="formError" ng-show="!custInfo.fName.$valid && custInfo.fName.$dirty" >Please enter valid first Name</label>
+		</div>
+		<div class="formCtrl">
+			<label for="lName">Last Name</label>
+			<input name="lName" type="text" ng-model="lName" ng-pattern="[A-z,]+" ng-required>
+				<label class="formError" ng-show="!custInfo.lName.$valid && custInfo.lName.$dirty" >Please enter valid last Name</label>
+		</div>
+		<div class="formCtrl">
+			<label for="fAddr">Address 1</label>
+			<input name="fAddr" type="text" ng-model="fAddr" ng-pattern="[A-z,]+" ng-required>
+				<label class="formError" ng-show="!custInfo.fAddr.$valid && custInfo.fAddr.$dirty" >Please enter valid address 1</label>
+		</div>
+		<div class="formCtrl">
+			<label for="sAddr">Address 2</label>
+			<input name="sAddr" type="text" ng-model="sAddr" ng-pattern="[A-z,]+" ng-required>
+				<label class="formError" ng-show="!custInfo.sAddr.$valid && custInfo.sAddr.$dirty" >Please enter valid address 2</label>
 
+		</div>
+		<div class="formCtrl">
+			<label for="city">City</label>
+			<input name="city" type="text" ng-model="city" ng-pattern="[A-z,]+" ng-required>
+				<label class="formError" ng-show="!custInfo.city.$valid && custInfo.city.$dirty" >Please enter valid city</label>
+		</div>
+		<div class="formCtrl">
+			<label for="state">State</label>
+			<input name="state" type="text" ng-model="state" ng-pattern="[A-z,]+" ng-required>
+				<label class="formError" ng-show="!custInfo.state.$valid && custInfo.state.$dirty" >Please enter valid state</label>
+		</div>
+		<div class="formCtrl">
+			<label for="pin">Pin</label>
+			<input name="pin" type="text" ng-model="pin" ng-pattern="[1-9][0-9]{5}" ng-required>
+				<label class="formError" ng-show="!custInfo.pin.$valid && custInfo.pin.$dirty" >Please enter valid pin</label>
+		</div>
+		<div class="formCtrl">
+			<label for="phNo">Phone Number</label>
+			<input name="phNo" type="text" ng-model="phNo" ng-pattern="[1-9][0-9]{9}" ng-required>
+				<label class="formError" ng-show="!custInfo.phNo.$valid && custInfo.phNo.$dirty" >Please enter valid phone number</label>
+		</div>
+
+	</form>
+</div>
+</div>
 <div class="orderConfSumm">
 				<div class="heading">Order Summary</div>
 				<div class="summaryMenu">
