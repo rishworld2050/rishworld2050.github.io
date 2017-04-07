@@ -181,6 +181,9 @@ display: table-cell;
     text-align: center;
     margin: 0 auto;
 }
-.orderConfSumm .orderBtn{
+.orderConfSumm + .orderBtn{
 	margin-top:30px;
+}
+.orderConfSumm .foodTable{
+	margin-bottom:0;
 }
