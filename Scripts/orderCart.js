@@ -2,9 +2,11 @@ var orderApp=angular.module("orderCart",["ngRoute"]);
 orderApp.config(function($routeProvider) {
    $routeProvider
     .when("/", {
-        templateUrl : "page1.html"
+        templateUrl : "orderBuilder.html"
     })
-    
+    .when("/orderCnf",{
+           templateUrl: "orderConfirmation.html"
+    })    
     .otherwise({
         templateUrl : "nothing here"
     });
