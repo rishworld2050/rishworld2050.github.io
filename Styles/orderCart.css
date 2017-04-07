@@ -1,0 +1,150 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.container{
+	width:1200px;
+	margin:20px auto 0;
+}
+header{
+	padding: 20px 100px 20px 20px;
+	background-color:#f7f7f7;
+	height: 30px;
+}
+#logo{
+	font: bold 25px 'Segoe UI';
+	float: left;
+}
+nav{
+	float:right;
+	height:inherit;
+}
+.navOpt{
+	float: left;
+    padding-right: 25px;
+    border-right: 2px solid #e3e3e3;
+    color:#e3e3e3
+    margin-top:7px;
+}
+.navOpt:last-child{
+	border:none;
+	padding-right:0;
+	padding-left:25px;
+}
+.orderBuilderContainer{
+	display: table-row;
+}
+.orderBuilderMain,.orderBuilderSumm{
+	display: table-cell;
+	border:1px solid #f7f7f7;	
+	border-left:4px solid #b7b7b7;
+	background-color:#f7f7f7;
+	float:left;
+	width:830px;
+	padding:20px;
+}
+.orderBuilderSumm{
+	margin-left:20px;
+	width:280px;
+	padding:10px;
+}
+.heading{
+	width:100px;
+	padding-bottom:5px;
+	border-bottom: 1px solid #b7b7b7;
+}
+.menu{
+	padding:30px 30px 0 60px;
+	width:740px:;
+}
+.summaryMenu{
+	padding:10px;
+width:260px;
+}
+.foodType{
+	font:bold 20px 'Segoe UI';
+}
+.tblHead div,.tblRow div{
+display: inline-block;
+}
+.tblHead{
+	padding-bottom:20px;
+	border-bottom:1px solid #b7b7b7;
+	margin-top:30px;
+}
+.tblRow:nth-child(2){
+	margin-top:50px;
+}
+.tblRow{height: 35px;}
+.foodTable{
+	margin-bottom:40px;
+}
+.itemHead{
+	margin-left:44px;
+	width:500px;
+}
+.itemPrice{
+	width:100px;
+}
+.itemSno{
+	width:40px;
+}
+.itemSno::after{
+	content:".";
+}
+.itemName{
+	width:500px;
+}
+.itemPrice{
+	width:100px;
+}
+.itemPrice::before{
+	content:"Rs.";
+}
+.itemInc,.itemDec{
+	width: 41px;
+	text-align:right;
+}
+.itemEnabled{
+	color:blue;
+	cursor:pointer;
+}
+.itemIncSumm,.itemDecSummm{
+	width:20px;
+	margin-right:10px;
+}
+.itemPriceSumm::before{
+	content:"Rs.";
+}
+.itemHeadSumm,.itemNameSumm{
+width:100px;
+display: table-cell;
+}
+.itemPriceSumm{
+	display: table-cell;
+}
+.countHeadSumm,.count{
+	width:90px;
+	display: table-cell;
+}
+
+.itemInc::after,.itemDec::after,.itemIncSumm::after,.itemDecSumm::after{
+	content:"]";
+	color:#000;
+}
+.itemInc::before,.itemDec::before,.itemIncSumm::before,.itemDecSumm::before{
+	content:"[";
+	color:#000;
+}
+.summTblRow{
+	height: auto;
+	padding:10px 0;
+}
+.summTblRow div{
+	display: inline-block;
+}
+.totalRow{
+	font-weight: bold;
+	border-top:2px solid #b7b7b7;
+	padding-top:15px;
+}
