@@ -197,7 +197,7 @@ $scope.validateAndRedirect=function(path,isReset){
 	}
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
-datraFactory.storeData({
+dataFactory.storeData({
 	"fName":$scope.fName,
 "lName":$scope.lName,
 "fAddr":$scope.fAddr,
