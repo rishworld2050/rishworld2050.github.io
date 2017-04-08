@@ -223,7 +223,7 @@ display: table-cell;
 }
 .halfWidth{
 	width:378px;
-	margin-rgiht:20px;
+	margin-right:20px;
 }
 .halfWidth + .halfWidth{
 	margin-right:0;
