@@ -247,4 +247,5 @@ display: table-cell;
 }
 .userInfo p{
 	font-weight: bold;
+	overflow-wrap: break-word;
 }
