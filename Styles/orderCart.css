@@ -184,3 +184,45 @@ display: table-cell;
 .orderConfSumm .foodTable{
 	margin-bottom:0;
 }
+.userInfo {
+    width: 1200px;
+    margin: 0 auto;
+    background: #f7f7f7;
+    border-left: 4px solid #b7b7b7;
+    margin-bottom: 40px;
+    padding: 20px;
+    }
+    .userInfo .summaryMenu {
+    margin: 30px 0 0 70px;
+    width: 800px;
+}
+.formErr {
+    color: red;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+.formCtrl {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+.formCtrl label {
+    font-size: 16px;
+    display: block;
+}
+.formCtrl input {
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+    /* border-radius: 3px; */
+    padding-right: 20px;
+}
+.fullWidth {
+    display: block;
+    width: 798px;
+}
+.halfWidth{
+	width:378px;
+}
+.oneThirdWidth{
+	width:266px;
+}
