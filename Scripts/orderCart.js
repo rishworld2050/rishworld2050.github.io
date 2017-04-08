@@ -96,8 +96,10 @@ factory.getMenu=function(){
 return factory;
 });
 orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
-$scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
+
 $scope.resetAll=function(){
+	$scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
+	$scope.orderId='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
 	$scope.foodType=[...new Set($scope.menuDataRaw.map(item => item.type))];;
