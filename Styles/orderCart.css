@@ -1,6 +1,7 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-family:'Segoe UI';
 }
 .container{
 	width:1200px;
@@ -172,7 +173,6 @@ display: table-cell;
     background-color: #346BDB;
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Segoe UI';
     width: 150px;
     padding: 5px 0;
     text-align: center;

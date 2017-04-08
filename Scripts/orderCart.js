@@ -97,6 +97,7 @@ return factory;
 });
 orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
 $scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
+$scope.resetAll=function(){
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
 	$scope.foodType=[...new Set($scope.menuDataRaw.map(item => item.type))];;
@@ -113,6 +114,7 @@ $scope.udpateAmount=function(){
 $scope.totalAmount=Object.values($scope.order).reduce(function(total,item){
 	return total+(item.Price * item.selStock);
 },0);
+};
 };
 $scope.addItem=function(category,dataIdx){
 	if(dataIdx!==undefined){
@@ -176,5 +178,6 @@ $scope.udpateAmount();
 };
 $scope.validateAndRedirect=function(path){
 	$location.path(path);
-}
+};
+$scope.resetAll();
 }]);
