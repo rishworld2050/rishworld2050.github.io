@@ -95,7 +95,7 @@ factory.getMenu=function(){
 };
 return factory;
 });
-orderApp.controller("orderBuilder",["dataFactory","$scope",function(dataFactory,$scope){
+orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
 $scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
