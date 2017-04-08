@@ -208,12 +208,13 @@ display: table-cell;
 .formCtrl label {
     font-size: 16px;
     display: block;
+    margin-bottom: :5px;
 }
 .formCtrl input {
     width: 100%;
     box-sizing: border-box;
     height: 30px;
-    /* border-radius: 3px; */
+    border:none;
     padding-right: 20px;
 }
 .fullWidth {
@@ -222,7 +223,20 @@ display: table-cell;
 }
 .halfWidth{
 	width:378px;
+	margin-rgiht:20px;
+}
+.halfWidth + .halfWidth{
+	margin-right:0;
+	width:398px;
 }
 .oneThirdWidth{
-	width:266px;
+	width:244px;
+	margin-right: 20px;
+}
+.oneThirdWidth:nth-child(3n+2){
+	margin-right:0;
+	width:264px;
+}
+.btnEnable{
+	cursor:pointer;
 }
