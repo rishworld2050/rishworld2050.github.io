@@ -99,7 +99,7 @@ orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(
 
 $scope.resetAll=function(){
 	$scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
-	$scope.custFormInfo={
+	$scope.initCustInfo={
 "fName":$scope.fName,
 "lName":$scope.lName,
 "fAddr":$scope.fAddr,
@@ -194,6 +194,7 @@ $scope.validateAndRedirect=function(path,isReset){
 	}
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
+$scope.custFormInfo=angular.copy($scope.initCustInfo);
 	}
 	$location.path(path);
 };
