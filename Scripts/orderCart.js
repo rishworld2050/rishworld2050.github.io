@@ -197,7 +197,7 @@ $scope.validateAndRedirect=function(path,isReset){
 	}
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
-factory.storeData({
+datraFactory.storeData({
 	"fName":$scope.fName,
 "lName":$scope.lName,
 "fAddr":$scope.fAddr,
@@ -208,7 +208,7 @@ factory.storeData({
 "phNo":$scope.phNo
 });
 	}
-	$scope.custInfo=factory.retrieveFormData();
+	$scope.custInfo=dataFactory.retrieveFormData();
 	$location.path(path);
 };
 $scope.resetAll();
