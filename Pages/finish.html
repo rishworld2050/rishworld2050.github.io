@@ -1,15 +1,15 @@
 <div class="userInfo">
 <div class="heading">Thank You</div>
 <div class="summaryMenu">
-<p>Thank you {{fName}} {{lName}}</p>
+<p>Thank you {{custInfo.fName}} {{custInfo.lName}}</p>
 <p>We have received your order ID {{orderId}} for Rs.{{totalAmount}}</p>
 <p>We will deliver your order to the following address:</p>
-<p>{{fAddr}}</p>
-<p>{{sAddr}}</p>
-<p>{{city}}</p>
-<p>{{state}}</p>
-<p>{{pin}}</p>
-<p>{{phNo}}</p>
+<p>{{custInfo.ffAddr}}</p>
+<p>{{custInfo.fsAddr}}</p>
+<p>{{custInfo.fcity}}</p>
+<p>{{custInfo.fstate}}</p>
+<p>{{custInfo.fpin}}</p>
+<p>{{custInfo.fphNo}}</p>
 </div>
 </div>
 		<div class="orderConfBtn btnEnable" ng-show="totalItem!=0" ng-click="validateAndRedirect('/',true)">Go back to Home</div>

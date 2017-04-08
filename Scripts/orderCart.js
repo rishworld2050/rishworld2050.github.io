@@ -9,13 +9,26 @@ orderApp.config(function($routeProvider) {
     })  
     .when("/finish",{
            templateUrl: "finish.html"
-    })    
-    .otherwise({
-        templateUrl : "nothing here"
     });
 });
 orderApp.factory("dataFactory",function(){
 var factory={};
+factory.formData={
+	"fName":'',
+	"lName":'',
+	"fAddr":'',
+	"sAddr":'',
+	"city":'',
+	"state":'',
+	"pin":'',
+	"phNo":''
+};
+factory.storeData=function(objData){
+factory.formData=angular.copy(objData);
+};
+factory.retrieveFormData=function(){
+return factory.formData;
+};
 factory.menuInfo=[
 	{ 
 		"type":"South Indian",
@@ -184,7 +197,18 @@ $scope.validateAndRedirect=function(path,isReset){
 	}
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
+factory.storeData({
+	"fName":$scope.fName,
+"lName":$scope.lName,
+"fAddr":$scope.fAddr,
+"lAddr":$scope.lAddr,
+"city":$scope.city,
+"state":$scope.state,
+"pin":$scope.pin,
+"phNo":$scope.phNo
+});
 	}
+	$scope.custInfo=factory.retrieveFormData();
 	$location.path(path);
 };
 $scope.resetAll();
