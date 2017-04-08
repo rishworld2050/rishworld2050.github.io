@@ -176,7 +176,13 @@ if($scope.order[key]!==undefined){
 }
 $scope.udpateAmount();
 };
-$scope.validateAndRedirect=function(path){
+$scope.validateAndRedirect=function(path,isReset){
+	if(isReset){
+		$scope.resetAll();
+	}
+	if(path==='/finish'){
+$scope.orderId=Math.random(36).substring(7);
+	}
 	$location.path(path);
 };
 $scope.resetAll();
