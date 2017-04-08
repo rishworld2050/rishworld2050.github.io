@@ -209,6 +209,7 @@ display: table-cell;
     font-size: 16px;
     display: block;
     margin-bottom:5px;
+    font-weight:500;
 }
 .formCtrl input {
     width: 100%;
