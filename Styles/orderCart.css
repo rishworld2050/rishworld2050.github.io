@@ -126,7 +126,7 @@ display: inline-block;
 	width:400px;
 }
 .orderConfSumm .countHeadSumm,.orderConfSumm .count{
-	width:135px;
+	width:134px;
 }
 .itemIncSumm,.itemDecSummm{
 	width:20px;
@@ -208,7 +208,8 @@ display: table-cell;
 .formCtrl label {
     font-size: 16px;
     display: block;
-    margin-bottom: :5px;
+    margin-bottom:5px;
+    font-weight:500;
 }
 .formCtrl input {
     width: 100%;
@@ -223,14 +224,14 @@ display: table-cell;
 }
 .halfWidth{
 	width:378px;
-	margin-rgiht:20px;
+	margin-right:20px;
 }
 .halfWidth + .halfWidth{
 	margin-right:0;
-	width:398px;
+	width:396px;
 }
 .oneThirdWidth{
-	width:244px;
+	width:242px;
 	margin-right: 20px;
 }
 .oneThirdWidth:nth-child(3n+2){
@@ -239,4 +240,7 @@ display: table-cell;
 }
 .btnEnable{
 	cursor:pointer;
+}
+.userInfo .heading{
+	width:120px;
 }
