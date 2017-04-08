@@ -126,7 +126,7 @@ display: inline-block;
 	width:400px;
 }
 .orderConfSumm .countHeadSumm,.orderConfSumm .count{
-	width:135px;
+	width:134px;
 }
 .itemIncSumm,.itemDecSummm{
 	width:20px;
@@ -240,4 +240,7 @@ display: table-cell;
 }
 .btnEnable{
 	cursor:pointer;
+}
+.userInfo .heading{
+	width:120px;
 }
