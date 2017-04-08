@@ -227,10 +227,10 @@ display: table-cell;
 }
 .halfWidth + .halfWidth{
 	margin-right:0;
-	width:398px;
+	width:396px;
 }
 .oneThirdWidth{
-	width:244px;
+	width:242px;
 	margin-right: 20px;
 }
 .oneThirdWidth:nth-child(3n+2){
