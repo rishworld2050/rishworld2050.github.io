@@ -23,8 +23,8 @@ factory.formData={
 	"pin":'',
 	"phNo":''
 };
-factory.storeData=function(objData){
-factory.formData=angular.copy(objData);
+factory.storeData=function(objKey,dataVal){
+factory.formData.objKey=dataVal;
 };
 factory.retrieveFormData=function(){
 return factory.formData;
@@ -131,6 +131,7 @@ $scope.totalAmount=Object.values($scope.order).reduce(function(total,item){
 },0);
 };
 };
+
 $scope.addItem=function(category,dataIdx){
 	if(dataIdx!==undefined){
 	var key=category+"_"+dataIdx;
@@ -164,6 +165,7 @@ $scope.totalItem+=1;
 }
 $scope.udpateAmount();
 };
+
 $scope.removeItem=function(category,dataIdx){
 	if(dataIdx!==undefined){
 	var key=category+"_"+dataIdx;
@@ -191,22 +193,15 @@ if($scope.order[key]!==undefined){
 }
 $scope.udpateAmount();
 };
+$scope.storeDataItoFact=function(key,val){
+dataFatory.storeData(key,val);
+}
 $scope.validateAndRedirect=function(path,isReset){
 	if(isReset){
 		$scope.resetAll();
 	}
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
-dataFactory.storeData({
-	"fName":$scope.fName,
-"lName":$scope.lName,
-"fAddr":$scope.fAddr,
-"lAddr":$scope.lAddr,
-"city":$scope.city,
-"state":$scope.state,
-"pin":$scope.pin,
-"phNo":$scope.phNo
-});
 	}
 	$scope.custInfo=dataFactory.retrieveFormData();
 	$location.path(path);
