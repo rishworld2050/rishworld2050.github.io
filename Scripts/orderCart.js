@@ -23,8 +23,8 @@ factory.formData={
 	"pin":'',
 	"phNo":''
 };
-factory.storeData=function(objKey,dataVal){
-factory.formData.objKey=dataVal;
+factory.storeData=function(dataObj){
+factory.formData=angular.copy(dataObj);
 };
 factory.retrieveFormData=function(){
 return factory.formData;
@@ -193,8 +193,9 @@ if($scope.order[key]!==undefined){
 }
 $scope.udpateAmount();
 };
-$scope.storeDataItoFact=function(key,val){
-dataFactory.storeData(key,val);
+$scope.storeDataItoFact=function(objData){
+	var infoObj=angular.copy(objData);
+dataFactory.storeData(objData);
 }
 $scope.validateAndRedirect=function(path,isReset){
 	if(isReset){
@@ -203,7 +204,17 @@ $scope.validateAndRedirect=function(path,isReset){
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
 	}
-	$scope.custInfo=dataFactory.retrieveFormData();
+	$scope.storeDataItoFact({
+		"fName":$scope.fName,
+	"lName":$scope.lName,
+	"fAddr":$scope.fAddr,
+	"sAddr":$scope.sAddr,
+	"city":$scope.city,
+	"state":$scope.state,
+	"pin":$scope.pin,
+	"phNo":$scope.phNo
+});
+	$scope.custDataFinal=dataFactory.retrieveFormData();
 	$location.path(path);
 };
 $scope.resetAll();
