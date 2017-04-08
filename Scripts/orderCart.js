@@ -99,6 +99,16 @@ orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(
 
 $scope.resetAll=function(){
 	$scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
+	$scope.custFormInfo={
+"fName":$scope.fName,
+"lName":$scope.lName,
+"fAddr":$scope.fAddr,
+"city":$scope.city,
+"sAddr":$scope.sAddr,
+"state":$scope.state,
+"pin":$scope.pin,
+"phNo":$scope.phNo,
+	};
 	$scope.orderId='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
