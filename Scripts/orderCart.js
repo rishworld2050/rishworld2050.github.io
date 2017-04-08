@@ -183,7 +183,7 @@ $scope.validateAndRedirect=function(path,isReset){
 		$scope.resetAll();
 	}
 	if(path==='/finish'){
-$scope.orderId=Math.random(36).substring(7);
+$scope.orderId=Math.random.toString(36).substring(7);
 	}
 	$location.path(path);
 };
