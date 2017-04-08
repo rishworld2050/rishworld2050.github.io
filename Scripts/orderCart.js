@@ -109,9 +109,12 @@ factory.getMenu=function(){
 return factory;
 });
 orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
-
+$scope.formData=dataFactory.retrieveFormData();
+$scope.$watch('formData', function () {                
+        dataFactory.storeData($scope.formData);
+    });
 $scope.resetAll=function(){
-	$scope.fName='';$scope.lName='';$scope.fAddr='';$scope.sAddr='';$scope.city='';$scope.state='';$scope.pin='';$scope.phNo='';
+
 	$scope.orderId='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
@@ -193,10 +196,7 @@ if($scope.order[key]!==undefined){
 }
 $scope.udpateAmount();
 };
-$scope.storeDataItoFact=function(objData){
-	var infoObj=angular.copy(objData);
-dataFactory.storeData(objData);
-}
+
 $scope.validateAndRedirect=function(path,isReset){
 	if(isReset){
 		$scope.resetAll();
@@ -204,18 +204,7 @@ $scope.validateAndRedirect=function(path,isReset){
 	if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
 	}
-	$scope.storeDataItoFact({
-		"fName":$scope.fName,
-	"lName":$scope.lName,
-	"fAddr":$scope.fAddr,
-	"sAddr":$scope.sAddr,
-	"city":$scope.city,
-	"state":$scope.state,
-	"pin":$scope.pin,
-	"phNo":$scope.phNo
-});
-	$scope.custDataFinal=dataFactory.retrieveFormData();
-	$location.path(path);
+		$location.path(path);
 };
 $scope.resetAll();
 }]);
