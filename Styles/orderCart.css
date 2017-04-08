@@ -208,7 +208,7 @@ display: table-cell;
 .formCtrl label {
     font-size: 16px;
     display: block;
-    margin-bottom: :5px;
+    margin-bottom:5px;
 }
 .formCtrl input {
     width: 100%;
