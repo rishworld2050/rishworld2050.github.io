@@ -1,4 +1,4 @@
-<div class="userInfo" ng-show="ordCnfInfo.orderId!=''">
+<div class="userInfo" ng-show="ordCnfInfo.orderId.length>0">
 <div class="heading">Thank You</div>
 <div class="summaryMenu">
 <p>Thank you {{ordCnfInfo.fName}} {{ordCnfInfo.lName}}</p>
@@ -12,6 +12,6 @@
 <p>{{ordCnfInfo.phNo}}</p>
 </div>
 </div>
-		<div class="orderConfBtn btnEnable" ng-show="totalItem!=0" ng-click="validateAndRedirect('/')">Go back to Home</div>
+		<div class="orderConfBtn btnEnable" ng-show="ordCnfInfo.orderId.length>0" ng-click="validateAndRedirect('/')">Go back to Home</div>
 		
 		
