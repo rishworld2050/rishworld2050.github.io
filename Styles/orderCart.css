@@ -245,3 +245,6 @@ display: table-cell;
 .userInfo .heading{
 	width:120px;
 }
+.userInfo p{
+	font-weight: bold;
+}
