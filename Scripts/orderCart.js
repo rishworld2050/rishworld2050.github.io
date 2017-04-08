@@ -174,5 +174,7 @@ if($scope.order[key]!==undefined){
 }
 $scope.udpateAmount();
 };
-
+$scope.validateAndRedirect=function(path){
+	$location.path(path);
+}
 }]);
