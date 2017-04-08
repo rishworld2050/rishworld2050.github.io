@@ -2,7 +2,7 @@
 <div class="heading">Customer Info</div>
 <div class="summaryMenu">
 	<form name="custInfo">
-	<div class="formErr" ng-show="custInfo.$valid">Please fill valid information in all the fields to checkout</div>
+	<div class="formErr" ng-show="!custInfo.$valid">Please fill valid information in all the fields to checkout</div>
 		<div class="formCtrl">
 			<label for="fName">First Name</label>
 			<input name="fName" type="text" ng-model="fName" pattern="[A-z]+" required>
