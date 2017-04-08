@@ -9,14 +9,14 @@
 </head>
 <body ng-app="orderCart">
 	
-		<header>
+		<header  ng-controller="orderBuilder">
 			<div id="logo">foodzonline</div>
 			<nav>
-				<div class="navOpt">Home</div>
-				<div class="navOpt">Order</div>
+				<div ng-class="{navOpt:true,navEnabled:currentNav}">Home</div>
+				<div ng-class="{navOpt:true,navEnabled:!currentNav}">Order</div>
 			</nav>
 		</header>
-		<div class="container" ng-controller="orderBuilder">
+		<div class="container">
 		
 		<ng-view></ng-view>
 	</div>

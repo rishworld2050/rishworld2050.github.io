@@ -115,6 +115,7 @@ return factory;
 orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
 
 $scope.resetAll=function(){
+	$scope.currentNav=true;
 	$scope.formData=dataFactory.retrieveFormData();
 $scope.$watch('formData', function () {                
         dataFactory.storeData($scope.formData);
@@ -210,7 +211,11 @@ dataFactory.ordCnfData($scope.formData);
 $scope.resetAll();
 dataFactory.resetFormData();
 	}
+	else if(path==='/orderCnf'){
+		$scope.currentNav=!$scope.currentNav;
+		}
 		$location.path(path);
+	
 };
 $scope.resetAll();
 }]);
