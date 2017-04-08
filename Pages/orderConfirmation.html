@@ -1,40 +1,40 @@
 <div class="userInfo">
 <div class="heading">Customer Info</div>
 <div class="summaryMenu">
-	<div ng-form="custInfo">
+	<div ng-form="custInfo" ng-controller="userData">
 	<div class="formErr" ng-show="!custInfo.$valid">Please fill valid information in all the fields to checkout</div>
 		<div class="formCtrl halfWidth">
 			<label for="fName">First Name</label>
-			<input name="fName" type="text" ng-model="fName" pattern="[A-z]+" required>
+			<input name="fName" type="text" ng-model="formData.fName" pattern="[A-z]+" required>
 		</div>
 		<div class="formCtrl halfWidth">
 			<label for="lName">Last Name</label>
-			<input name="lName" type="text" ng-model="lName" pattern="[A-z]+" required>
+			<input name="lName" type="text" ng-model="formData.lName" pattern="[A-z]+" required>
 		</div>
 		<div class="formCtrl fullWidth">
 			<label for="fAddr">Address 1</label>
-			<input name="fAddr" type="text" ng-model="fAddr" pattern="[A-z]+" required >
+			<input name="fAddr" type="text" ng-model="formData.fAddr" pattern="[A-z]+" required >
 		</div>
 		<div class="formCtrl fullWidth">
 			<label for="sAddr">Address 2</label>
-			<input name="sAddr" type="text" ng-model="sAddr" pattern="[A-z]+" required>
+			<input name="sAddr" type="text" ng-model="formData.sAddr" pattern="[A-z]+" required>
 
 		</div>
 		<div class="formCtrl oneThirdWidth">
 			<label for="city">City</label>
-			<input name="city" type="text" ng-model="city" pattern="[A-z]+" required >
+			<input name="city" type="text" ng-model="formData.city" pattern="[A-z]+" required >
 		</div>
 		<div class="formCtrl oneThirdWidth">
 			<label for="state">State</label>
-			<input name="state" type="text" ng-model="state" pattern="[A-z]+" required>
+			<input name="state" type="text" ng-model="formData.state" pattern="[A-z]+" required>
 		</div>
 		<div class="formCtrl oneThirdWidth">
 			<label for="pin">Pin</label>
-			<input name="pin" type="text" ng-model="pin" pattern="[1-9][0-9]{5}" required >
+			<input name="pin" type="text" ng-model="formData.pin" pattern="[1-9][0-9]{5}" required >
 		</div>
 		<div class="formCtrl oneThirdWidth">
 			<label for="phNo">Phone Number</label>
-			<input name="phNo" type="text" ng-model="phNo" pattern="[1-9][0-9]{9}" required>
+			<input name="phNo" type="text" ng-model="formData.phNo" pattern="[1-9][0-9]{9}" required>
 		</div>
 
 	</div>
