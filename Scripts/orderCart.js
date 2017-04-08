@@ -113,12 +113,13 @@ factory.getMenu=function(){
 return factory;
 });
 orderApp.controller("orderBuilder",["dataFactory","$location","$scope",function(dataFactory,$location,$scope){
-$scope.formData=dataFactory.retrieveFormData();
+
+$scope.resetAll=function(){
+	$scope.formData=dataFactory.retrieveFormData();
 $scope.$watch('formData', function () {                
         dataFactory.storeData($scope.formData);
     });
-$scope.resetAll=function(){
-$scope.ordCnfInfo=angular.copy(dataFactory.fetchOrdInfo);
+$scope.ordCnfInfo=angular.copy(dataFactory.fetchOrdInfo());
 	$scope.orderId='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
