@@ -249,3 +249,6 @@ display: table-cell;
 	font-weight: bold;
 	overflow-wrap: break-word;
 }
+.itemCountSumm{
+	width:20px;
+}
