@@ -194,7 +194,7 @@ if($scope.order[key]!==undefined){
 $scope.udpateAmount();
 };
 $scope.storeDataItoFact=function(key,val){
-dataFatory.storeData(key,val);
+dataFactory.storeData(key,val);
 }
 $scope.validateAndRedirect=function(path,isReset){
 	if(isReset){
