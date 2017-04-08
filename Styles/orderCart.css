@@ -54,6 +54,7 @@ nav{
     background-color: #f7f7f7;
     padding:20px;
     width:1160px;
+    margin-bottom:30px;
 }
 .heading,.orderConfSumm .heading{
 	width:100px;
@@ -168,7 +169,7 @@ display: table-cell;
 	border-top:2px solid #b7b7b7;
 	padding-top:15px;
 }
-.orderBtn{
+.orderBtn,.orderConfBtn{
 	display: block;
     background-color: #346BDB;
     color: #fff;
@@ -178,8 +179,8 @@ display: table-cell;
     text-align: center;
     margin: 0 auto;
 }
-.orderConfSumm + .orderBtn{
-	margin-top:30px;
+.orderConfBtn{
+	text-transform: none;;
 }
 .orderConfSumm .foodTable{
 	margin-bottom:0;
