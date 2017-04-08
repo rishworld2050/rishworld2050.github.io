@@ -11,20 +11,24 @@ orderApp.config(function($routeProvider) {
            templateUrl: "finish.html"
     });
 });
+
 orderApp.factory("dataFactory",function(){
 var factory={};
-factory.formData={
-	"fName":'',
-	"lName":'',
-	"fAddr":'',
-	"sAddr":'',
-	"city":'',
-	"state":'',
-	"pin":'',
-	"phNo":''
-};
+factory.ordInfo={};
+factory.formData={"fName":'',	"lName":'',	"fAddr":'',	"sAddr":'',	"city":'',	"state":'',	"pin":'',	"phNo":''};
 factory.storeData=function(dataObj){
 factory.formData=angular.copy(dataObj);
+};
+factory.ordCnfData=function(userData){
+factory.ordInfo=angular.copy(userData);
+};
+factory.fetchOrdInfo=function(){
+	return factory.ordInfo;
+}
+factory.resetFormData=function(){
+	for(var field in factory.formData){
+		factory.formData[field]='';
+	}
 };
 factory.retrieveFormData=function(){
 return factory.formData;
@@ -114,7 +118,7 @@ $scope.$watch('formData', function () {
         dataFactory.storeData($scope.formData);
     });
 $scope.resetAll=function(){
-
+$scope.ordCnfInfo=angular.copy(dataFactory.fetchOrdInfo);
 	$scope.orderId='';
 $scope.menuInfo={};
 $scope.menuDataRaw=dataFactory.getMenu();
@@ -124,7 +128,6 @@ $scope.menuDataRaw=dataFactory.getMenu();
 return item.type===$scope.foodType[foodT];
 		});
 	}
-//sconsole.log($scope.foodType);
 $scope.order={};
 $scope.totalItem=0;
 $scope.totalAmount=0;
@@ -197,12 +200,14 @@ if($scope.order[key]!==undefined){
 $scope.udpateAmount();
 };
 
-$scope.validateAndRedirect=function(path,isReset){
-	if(isReset){
-		$scope.resetAll();
-	}
-	if(path==='/finish'){
+$scope.validateAndRedirect=function(path){
+		if(path==='/finish'){
 $scope.orderId=Math.random().toString(36).substring(7);
+$scope.formData.orderId=$scope.orderId;
+$scope.formData.totalAmount=$scope.totalAmount;
+dataFactory.ordCnfData($scope.formData);
+$scope.resetAll();
+dataFactory.resetFormData();
 	}
 		$location.path(path);
 };
