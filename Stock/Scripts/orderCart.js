@@ -8,6 +8,7 @@ var stkApp=angular.module("stockApp",['ngWebSocket']);
 
       dataStream.onMessage(function(message) {
         collection.push(JSON.parse(message.data));
+        console.log(JSON.parse(message.data));
       });
 
       var methods = {
