@@ -7,25 +7,40 @@
     <link href="Styles/Main.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdn.rawgit.com/AngularClass/angular-websocket/v2.0.0/dist/angular-websocket.min.js"></script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="Scripts/orderCart.js"></script>
 </head>
 <body>
-    <div id="container" data-ng-app="stockApp" data-ng-controller="StockController as StkCtrl">
+    <div id="Container" data-ng-app="stockApp" data-ng-controller="StockController">
     <div class="StockGrid">
+    <H3>Stocks App</H3>
         <div class="TableHeader">
-            <div>Ticker</div>
-            <div>Price</div>
-            </div>Last Updated</div>
+            <div class="TickerHead">Ticker</div>
+            <div class="StockPriceHead">Stock Price</div>
+            <div class="TimeStampHead">Last Updated</div>
         </div>
 <div class="TableBody">
-<div class="TableBodyRow" data-ng-repeat="stockInfo in StkCtrl.stockData">
-    <div>{{stockInfo.name}}</div>
-    <div class="StockPrice">{{stockInfo.price}}
-    <span data-ng-class="{KPIUp:stockInfo.color==='green',KPIDown:stockInfo.color==='red'}">{{stockInfo.delta}}</span></div>
-    <div>{{stockInfo.timestamp}}</div>
+<div class="TableBodyRow" data-ng-repeat="stockInfo in stockData">
+    <div class="TickerBody">{{stockInfo.name}}</div>
+    <div class="StockPriceBody">
+    <span class="StockPrice">{{stockInfo.price | number:2}}</span>
+    <span ng-if="stockInfo.delta!=='0'" data-ng-class="{KPIUp:stockInfo.color==='green',KPIDown:stockInfo.color==='red'}">{{stockInfo.delta}}</span></div>
+    <div class="TimeStampBody">{{stockInfo.timestamp}}</div>
     </div>
 </div>
     </div>
+
+
+  <div id="StockTrendChart">
+        <div class="FilterDropdown">
+            <label for="ticker">Ticker</label>
+                <select name="ticker" data-ng-model="currentChartView"  data-ng-change="renderChart()">
+                    <option data-ng-repeat="(tickerKey,tickerVal) in chartData " value="{{tickerKey}}">{{tickerKey}}</option>
+                </select>
+            </div>
+      <div id="TrendChartContainer"></div>
+  </div>
+      
      </div>
 </body>
 </html>
