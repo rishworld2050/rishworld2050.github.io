@@ -68,7 +68,7 @@ body{
 }
 .TableBody{
     overflow-y:auto;
-    height: 410px;
+    height: 400px;
 }
 .TimeStampBody{
         width: 180px;
@@ -76,7 +76,7 @@ body{
 }
 #StockTrendChart{
     width:600px;
-    height:500px;
+    height:400px;
     float:right;
 }
 .FilterDropdown select {
@@ -98,10 +98,13 @@ option{
     font-size:14px;
 }
 #TrendChartContainer{
-    height:440px;
-    margin-top:60px;
+    height:400px;
+    margin-top:70px;
     width:600px;
 }
 h3{
+    margin-top:0;
+}
+h4{
     margin-top:0;
 }

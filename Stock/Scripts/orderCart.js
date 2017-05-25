@@ -85,7 +85,7 @@ $scope.renderChart=function(){
        
 
         var options = {
-          title: 'Trend of Stock Price for '+$scope.currentChartView,
+          title: 'Stock Price Trend : '+$scope.currentChartView,
           legend: { position: 'bottom' },
           hAxis:{
           	textStyle:{
