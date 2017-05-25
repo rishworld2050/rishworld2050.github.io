@@ -10,9 +10,22 @@
     <script src="Scripts/orderCart.js"></script>
 </head>
 <body>
-    <div id="container" data-ng-app="stockApp" data-ng-controller="SomeController">
-      
+    <div id="container" data-ng-app="stockApp" data-ng-controller="StockController as StkCtrl">
+    <div class="StockGrid">
+        <div class="TableHeader">
+            <div>Ticker</div>
+            <div>Price</div>
+            </div>Last Updated</div>
+        </div>
+<div class="TableBody">
+<div class="TableBodyRow" data-ng-repeat="stockInfo in StkCtrl.stockData">
+    <div>{{stockInfo.name}}</div>
+    <div class="StockPrice">{{stockInfo.price}}
+    <span data-ng-class="{KPIUp:stockInfo.color==='green',KPIDown:stockInfo.color==='red'}">{{stockInfo.delta}}</span></div>
+    <div>{{stockInfo.timestamp}}</div>
     </div>
-    
+</div>
+    </div>
+     </div>
 </body>
 </html>
