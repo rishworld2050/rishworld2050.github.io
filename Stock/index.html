@@ -1,47 +1,53 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8" />
     <title>Rishab Kumar Agarwal</title>
-    <link href="Styles/Main.css" rel="stylesheet" />
+    <link href="Styles/home.min.css?v=2.0" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <script src="https://cdn.rawgit.com/AngularClass/angular-websocket/v2.0.0/dist/angular-websocket.min.js"></script>
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="Scripts/orderCart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <div id="Container" data-ng-app="stockApp" data-ng-controller="StockController">
-    <H3>Stocks App</H3>
-    <div class="StockGrid">
-    <h4>Summary Grid</h4>
-        <div class="TableHeader">
-            <div class="TickerHead">Ticker</div>
-            <div class="StockPriceHead">Stock Price</div>
-            <div class="TimeStampHead">Last Updated</div>
+        <H3>Stocks App</H3>
+        <div class="StockGrid">
+            <div class="SectionHeader">
+                <div class="GridTitle">Summary Grid</div>
+                <div class="Legend">
+                    <span>Trend:</span>
+                    <span class="LegendUp">Up</span>
+                    <span class="LegendDown">Down</span>
+                </div>
+            </div>
+            <div class="TableHeader">
+                <div class="TickerHead">Ticker</div>
+                <div class="StockPriceHead">Stock Price</div>
+                <div class="TimeStampHead">Last Updated</div>
+            </div>
+            <div class="TableBody">
+                <div class="TableBodyRow" data-ng-repeat="stockInfo in stockData">
+                    <div class="TickerBody">{{stockInfo.name}}</div>
+                    <div class="StockPriceBody">
+                        <span class="StockPrice">{{stockInfo.price | number:2}}</span>
+                        <span data-ng-if="stockInfo.delta!=='0'" data-ng-class="{KPIUp:stockInfo.color==='green',KPIDown:stockInfo.color==='red'}">{{stockInfo.delta}}</span>
+                    </div>
+                    <div class="TimeStampBody">{{stockInfo.timestamp}}</div>
+                </div>
+            </div>
         </div>
-<div class="TableBody">
-<div class="TableBodyRow" data-ng-repeat="stockInfo in stockData">
-    <div class="TickerBody">{{stockInfo.name}}</div>
-    <div class="StockPriceBody">
-    <span class="StockPrice">{{stockInfo.price | number:2}}</span>
-    <span ng-if="stockInfo.delta!=='0'" data-ng-class="{KPIUp:stockInfo.color==='green',KPIDown:stockInfo.color==='red'}">{{stockInfo.delta}}</span></div>
-    <div class="TimeStampBody">{{stockInfo.timestamp}}</div>
-    </div>
-</div>
-    </div>
-
-
-  <div id="StockTrendChart">
-        <div class="FilterDropdown">
-            <label for="ticker">Ticker</label>
-                <select name="ticker" data-ng-model="currentChartView"  data-ng-change="renderChart()">
+        <div id="StockTrendChart">
+            <div class="FilterDropdown">
+                <label for="Ticker">Ticker</label>
+                <select name="Ticker" data-ng-model="currentChartView" data-ng-change="renderChart()">
                     <option data-ng-repeat="(tickerKey,tickerVal) in chartData " value="{{tickerKey}}">{{tickerKey}}</option>
                 </select>
             </div>
-      <div id="TrendChartContainer"></div>
-  </div>
-      
-     </div>
+            <div id="TrendChartContainer"></div>
+        </div>
+    </div>
+    <script src="Scripts/home.min.js?v=2.0"></script>
 </body>
 </html>
