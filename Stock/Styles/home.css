@@ -1,0 +1,143 @@
+﻿#Container {
+    width: 1200px;
+    margin: 0 auto;
+    font-family: 'Segoe UI';
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 20px;
+    background-color: #fff;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ccc;
+}
+.KPIDown::before {
+    content: "\1f87e";
+    font-size: 18px;
+    color: red;
+}
+.KPIUp::before {
+    content: "\1f87d";
+    font-size: 18px;
+    color: green;
+}
+.LegendUp::before {
+    content: "\1f87d";
+    font-size: 18px;
+    color: green;
+}
+.LegendDown::before {
+    content: "\1f87e";
+    font-size: 18px;
+    color: red;
+}
+.GridTitle {
+    float: left;
+    font-weight: bold;
+    font-size: 20px;
+}
+.SectionHeader {
+    margin-bottom: 10px;
+    height: 30px;
+}
+.Legend {
+    float: right;
+}
+.TableHeader div,
+.TableBodyRow div {
+    float: left;
+}
+.TableHeader,
+.TableBodyRow {
+    clear: both;
+    box-sizing: border-box;
+    height: 30px;
+}
+.TickerHead,
+.StockPriceHead,
+.TimeStampHead,
+.TickerBody,
+.StockPriceBody,
+.TimeStampBody {
+    height: 30px;
+    background-color: #505050;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 5px 15px;
+}
+.StockPrice {
+    width: 45px;
+    display: inline-block;
+}
+.TickerBody,
+.StockPriceBody,
+.TimeStampBody {
+    background: none;
+    color: #000;
+}
+.TableBodyRow {
+    border-bottom: 1px solid #fafafa;
+}
+.StockGrid {
+    width: 490px;
+    float: left;
+    padding-right: 80px;
+    border-right: 2px solid #ccc;
+}
+.TickerBody,
+.TickerHead {
+    width: 90px;
+}
+.StockPriceBody,
+.StockPriceHead {
+    width: 180px;
+}
+.TimeStampHead {
+    width: 220px;
+}
+.TableBody {
+    overflow-y: auto;
+    height: 400px;
+}
+.TimeStampBody {
+    width: 200px;
+    padding: 5px 0 5px 15px;
+}
+#StockTrendChart {
+    width: 600px;
+    height: 400px;
+    float: right;
+}
+.FilterDropdown select {
+    width: 100%;
+    height: 30px;
+    border: 1px solid #eaeaea;
+}
+.FilterDropdown {
+    width: 200px;
+    height: 60px;
+    float: right;
+    margin-right: 80px;
+}
+Select {
+    font-family: 'Segoe UI Light';
+    cursor: pointer;
+}
+option {
+    font-weight: bold;
+    font-size: 14px;
+}
+#TrendChartContainer {
+    height: 400px;
+    margin-top: 70px;
+    width: 600px;
+}
+h3 {
+    margin-top: 0;
+}
+h4 {
+    margin-top: 0;
+}
